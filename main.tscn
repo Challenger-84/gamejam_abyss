@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ci60squixjdc6"]
 
-[ext_resource type="PackedScene" uid="uid://c5yj0rk81jh30" path="res://player.tscn" id="1_i78rh"]
-[ext_resource type="PackedScene" uid="uid://djycp5wdj6em7" path="res://enemy.tscn" id="2_rau17"]
+[ext_resource type="PackedScene" uid="uid://c5yj0rk81jh30" path="res://Scenes/player.tscn" id="1_i78rh"]
+[ext_resource type="PackedScene" uid="uid://djycp5wdj6em7" path="res://Scenes/enemy.tscn" id="2_rau17"]
 [ext_resource type="PackedScene" uid="uid://b70vtpy8du05s" path="res://fruit.tscn" id="3_ruhe1"]
 
 [node name="Main" type="Node2D"]
