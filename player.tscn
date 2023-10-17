@@ -1,8 +1,9 @@
-[gd_scene load_steps=47 format=3 uid="uid://c5yj0rk81jh30"]
+[gd_scene load_steps=50 format=3 uid="uid://c5yj0rk81jh30"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_vjp11"]
 [ext_resource type="Texture2D" uid="uid://cw8fwhjf0u4dj" path="res://Assets/stormhead/attack.png" id="2_4ayhe"]
 [ext_resource type="Texture2D" uid="uid://fk2dituknhtk" path="res://Assets/stormhead/idle.png" id="2_fxf36"]
+[ext_resource type="Texture2D" uid="uid://g5hjtkmwb708" path="res://Assets/stormhead/damaged.png" id="3_4af3c"]
 [ext_resource type="Texture2D" uid="uid://bk2n83uaul836" path="res://Assets/stormhead/run.png" id="3_qm6bu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5euj8"]
@@ -91,6 +92,14 @@ region = Rect2(0, 2356, 119, 124)
 [sub_resource type="AtlasTexture" id="AtlasTexture_hdyww"]
 atlas = ExtResource("2_4ayhe")
 region = Rect2(0, 2480, 119, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3s12u"]
+atlas = ExtResource("3_4af3c")
+region = Rect2(0, 0, 119, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r14cs"]
+atlas = ExtResource("3_4af3c")
+region = Rect2(0, 124, 119, 124)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_22kbe"]
 atlas = ExtResource("2_fxf36")
@@ -240,6 +249,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_3s12u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r14cs")
+}],
+"loop": true,
+"name": &"damaged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_22kbe")
 }, {
 "duration": 1.0,
@@ -326,7 +346,9 @@ shape = SubResource("RectangleShape2D_5euj8")
 texture_filter = 1
 position = Vector2(0, -62)
 sprite_frames = SubResource("SpriteFrames_qh2la")
-animation = &"attack"
+animation = &"damaged"
 autoplay = "idle"
+frame = 1
+frame_progress = 0.754625
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
