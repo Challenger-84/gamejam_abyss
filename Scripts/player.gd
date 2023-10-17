@@ -8,6 +8,11 @@ extends CharacterBody2D
 @export var healthbar : ProgressBar
 @export var fruitcounter : Label
 
+@onready var animated_sprite = $AnimatedSprite2D
+
+func _ready():
+	animated_sprite.play("idle")
+	
 func _physics_process(delta):
 	var direction = Input.get_vector("Move Left", "Move Right", "Move Up", "Move Down")
 	velocity = velocity.move_toward(direction * speed , acceleration * delta)
