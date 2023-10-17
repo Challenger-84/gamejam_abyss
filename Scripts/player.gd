@@ -26,6 +26,8 @@ func _physics_process(delta):
 	elif velocity.x < 0:
 		animated_sprite.play("run")
 		animated_sprite.flip_h = true
+	else:
+		animated_sprite.play("idle")
 		
 	if Input.is_action_just_pressed("ui_accept") and Globals.health < Globals.max_health and Globals.fruits > 0:
 		Globals.health += 1	
