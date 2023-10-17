@@ -20,6 +20,13 @@ func _physics_process(delta):
 	if direction == Vector2.ZERO:
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 	
+	if velocity.x > 0:
+		animated_sprite.play("run")
+		animated_sprite.flip_h = false
+	elif velocity.x < 0:
+		animated_sprite.play("run")
+		animated_sprite.flip_h = true
+		
 	if Input.is_action_just_pressed("ui_accept") and Globals.health < Globals.max_health and Globals.fruits > 0:
 		Globals.health += 1	
 		Globals.fruits -= 1
@@ -28,5 +35,5 @@ func _physics_process(delta):
 	if Globals.health <= 0:
 		Globals.health = Globals.max_health
 		get_tree().reload_current_scene()
-	
+		
 	move_and_slide()
