@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://b70vtpy8du05s"]
 
 [ext_resource type="Script" path="res://Scripts/fruit.gd" id="1_g2kyv"]
-[ext_resource type="Texture2D" uid="uid://bitw16bnja3mh" path="res://Assets/fruit.png" id="1_l72bh"]
+[ext_resource type="Texture2D" uid="uid://dxc6teb4a6qhw" path="res://Assets/apple.png" id="2_j8011"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7lmko"]
-radius = 11.0
-height = 22.0
+radius = 7.0
+height = 14.0
 
 [node name="Fruits" type="Area2D"]
 collision_layer = 0
@@ -13,12 +13,11 @@ collision_mask = 2
 script = ExtResource("1_g2kyv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, -1.5)
-scale = Vector2(0.04, 0.037)
-texture = ExtResource("1_l72bh")
+texture_filter = 1
+texture = ExtResource("2_j8011")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
+position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_7lmko")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
