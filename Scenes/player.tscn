@@ -346,9 +346,7 @@ shape = SubResource("RectangleShape2D_5euj8")
 texture_filter = 1
 position = Vector2(0, -62)
 sprite_frames = SubResource("SpriteFrames_qh2la")
-animation = &"damaged"
+animation = &"run"
 autoplay = "idle"
-frame = 1
-frame_progress = 0.754625
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c5yj0rk81jh30" path="res://Scenes/player.tscn" id="1_i78rh"]
 [ext_resource type="PackedScene" uid="uid://djycp5wdj6em7" path="res://Scenes/enemy.tscn" id="2_rau17"]
-[ext_resource type="PackedScene" uid="uid://b70vtpy8du05s" path="res://fruit.tscn" id="3_ruhe1"]
+[ext_resource type="PackedScene" uid="uid://b70vtpy8du05s" path="res://Scenes/fruit.tscn" id="3_ruhe1"]
 
 [node name="Main" type="Node2D"]
 
@@ -12,6 +12,8 @@ healthbar = NodePath("../CanvasLayer/MarginContainer/VBoxContainer/Red")
 fruitcounter = NodePath("../CanvasLayer/MarginContainer/VBoxContainer/Label")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -42,13 +44,13 @@ position = Vector2(262, 422)
 position = Vector2(183, 213)
 
 [node name="Fruits" parent="." instance=ExtResource("3_ruhe1")]
-position = Vector2(885, 290)
+position = Vector2(781, 197)
 
 [node name="Fruits2" parent="." instance=ExtResource("3_ruhe1")]
-position = Vector2(787, 458)
+position = Vector2(624, 393)
 
 [node name="Fruits3" parent="." instance=ExtResource("3_ruhe1")]
-position = Vector2(112, 544)
+position = Vector2(120, 467)
 
 [node name="Fruits4" parent="." instance=ExtResource("3_ruhe1")]
 position = Vector2(75, 335)
@@ -57,7 +59,7 @@ position = Vector2(75, 335)
 position = Vector2(504, 110)
 
 [node name="Fruits6" parent="." instance=ExtResource("3_ruhe1")]
-position = Vector2(768, 102)
+position = Vector2(534, 262)
 
 [node name="Fruits7" parent="." instance=ExtResource("3_ruhe1")]
-position = Vector2(491, 581)
+position = Vector2(499, 504)
