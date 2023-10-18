@@ -35,6 +35,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and Globals.health < Globals.max_health and Globals.fruits > 0:
 		Globals.health += 1	
 		Globals.fruits -= 1
+		
+	if Input.is_action_just_pressed("Attack") and attacking == false:
 		animated_sprite.play("attack")
 		attacking = true
 		
