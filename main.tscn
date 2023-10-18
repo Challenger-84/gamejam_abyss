@@ -12,7 +12,6 @@ healthbar = NodePath("../CanvasLayer/MarginContainer/VBoxContainer/Red")
 fruitcounter = NodePath("../CanvasLayer/MarginContainer/VBoxContainer/Label")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position_smoothing_enabled = true
 position_smoothing_speed = 1.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
