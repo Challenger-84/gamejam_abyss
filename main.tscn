@@ -6,6 +6,13 @@
 
 [node name="Main" type="Node2D"]
 
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -575.0
+offset_top = -401.0
+offset_right = 1308.0
+offset_bottom = 762.0
+color = Color(0.137255, 0.137255, 0.137255, 1)
+
 [node name="Player" parent="." node_paths=PackedStringArray("healthbar", "fruitcounter") instance=ExtResource("1_i78rh")]
 position = Vector2(319, 183)
 healthbar = NodePath("../CanvasLayer/MarginContainer/VBoxContainer/Red")
@@ -39,23 +46,25 @@ position = Vector2(262, 422)
 [node name="enemy2" parent="." instance=ExtResource("2_rau17")]
 position = Vector2(183, 213)
 
-[node name="Fruits" parent="." instance=ExtResource("3_ruhe1")]
+[node name="Apples" type="Node" parent="."]
+
+[node name="Fruits" parent="Apples" instance=ExtResource("3_ruhe1")]
 position = Vector2(781, 197)
 
-[node name="Fruits2" parent="." instance=ExtResource("3_ruhe1")]
+[node name="Fruits2" parent="Apples" instance=ExtResource("3_ruhe1")]
 position = Vector2(624, 393)
 
-[node name="Fruits3" parent="." instance=ExtResource("3_ruhe1")]
+[node name="Fruits3" parent="Apples" instance=ExtResource("3_ruhe1")]
 position = Vector2(120, 467)
 
-[node name="Fruits4" parent="." instance=ExtResource("3_ruhe1")]
+[node name="Fruits4" parent="Apples" instance=ExtResource("3_ruhe1")]
 position = Vector2(75, 335)
 
-[node name="Fruits5" parent="." instance=ExtResource("3_ruhe1")]
+[node name="Fruits5" parent="Apples" instance=ExtResource("3_ruhe1")]
 position = Vector2(504, 110)
 
-[node name="Fruits6" parent="." instance=ExtResource("3_ruhe1")]
+[node name="Fruits6" parent="Apples" instance=ExtResource("3_ruhe1")]
 position = Vector2(534, 262)
 
-[node name="Fruits7" parent="." instance=ExtResource("3_ruhe1")]
+[node name="Fruits7" parent="Apples" instance=ExtResource("3_ruhe1")]
 position = Vector2(499, 504)
