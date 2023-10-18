@@ -6,9 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://coik1jyurtcyu" path="res://Assets/stormhead/AnimationSheet_Character.png" id="4_np2xh"]
 [ext_resource type="Script" path="res://Scripts/hurtbox.gd" id="5_0k8dy"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5euj8"]
-size = Vector2(11, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_0qaum"]
 atlas = ExtResource("4_np2xh")
 region = Rect2(0, 256, 32, 32)
@@ -172,6 +169,9 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5euj8"]
+size = Vector2(11, 28)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xbaj"]
 size = Vector2(13.25, 33.25)
 
@@ -182,10 +182,6 @@ speed = 400.0
 acceleration = 2000.0
 friction = 1000.0
 
-[node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -17)
-shape = SubResource("RectangleShape2D_5euj8")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -16)
@@ -195,6 +191,10 @@ autoplay = "idle"
 frame = 7
 frame_progress = 1.0
 
+[node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -14)
+shape = SubResource("RectangleShape2D_5euj8")
+
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 0
@@ -203,6 +203,7 @@ monitorable = false
 script = ExtResource("4_dwngy")
 
 [node name="HitBoxCollider" type="CollisionShape2D" parent="Hitbox"]
+visible = false
 position = Vector2(10.375, -16.625)
 shape = SubResource("RectangleShape2D_0xbaj")
 
@@ -223,7 +224,8 @@ collision_mask = 4
 script = ExtResource("5_0k8dy")
 
 [node name="HurtboxCollider" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(-0.5, -17)
+visible = false
+position = Vector2(-0.5, -14.5)
 shape = SubResource("RectangleShape2D_5euj8")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

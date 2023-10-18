@@ -14,6 +14,8 @@ var attacking : bool = false
 
 func _ready():
 	animated_sprite.play("idle")
+	var emitter = $HurtBox
+	emitter.take_damage.connect(take_damage)
 	
 func _physics_process(delta):
 	var direction = Input.get_vector("Move Left", "Move Right", "Move Up", "Move Down")
@@ -61,3 +63,6 @@ func _on_animated_sprite_2d_animation_finished():
 		attacking = false
 		$Hitbox.monitoring = false
 		$Hitbox.monitorable = false
+		
+func take_damage():
+	Globals.health -= 1

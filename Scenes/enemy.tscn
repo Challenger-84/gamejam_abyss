@@ -79,8 +79,6 @@ shape = SubResource("RectangleShape2D_5euj8")
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 0
-monitoring = false
-monitorable = false
 script = ExtResource("3_7hlpq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
