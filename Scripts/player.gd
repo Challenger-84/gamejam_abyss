@@ -37,6 +37,13 @@ func _physics_process(delta):
 		Globals.fruits -= 1
 		
 	if Input.is_action_just_pressed("Attack") and attacking == false:
+		if animated_sprite.flip_h:
+			$"Hitbox/HitBoxCollider".position = $"Hitbox/LeftPosition".position
+		else:
+			$"Hitbox/HitBoxCollider".position = $"Hitbox/RightPosition".position
+			
+		$Hitbox.monitoring = true
+		$Hitbox.monitorable = true
 		animated_sprite.play("attack")
 		attacking = true
 		
@@ -52,3 +59,5 @@ func _physics_process(delta):
 func _on_animated_sprite_2d_animation_finished():
 	if attacking:
 		attacking = false
+		$Hitbox.monitoring = false
+		$Hitbox.monitorable = false

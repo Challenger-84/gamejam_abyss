@@ -173,7 +173,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xbaj"]
-size = Vector2(12.5, 32.5)
+size = Vector2(13.25, 33.25)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -202,9 +202,15 @@ monitoring = false
 monitorable = false
 script = ExtResource("4_dwngy")
 
-[node name="HitBox Collider" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(10, -16)
+[node name="HitBoxCollider" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(10.375, -16.625)
 shape = SubResource("RectangleShape2D_0xbaj")
+
+[node name="RightPosition" type="Node2D" parent="Hitbox"]
+position = Vector2(10.375, -16.625)
+
+[node name="LeftPosition" type="Node2D" parent="Hitbox"]
+position = Vector2(-12, -16.625)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_smoothed = true

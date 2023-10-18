@@ -6,7 +6,7 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="CharacterBody2D" parent="." node_paths=PackedStringArray("healthbar", "fruitcounter") instance=ExtResource("1_i78rh")]
+[node name="Player" parent="." node_paths=PackedStringArray("healthbar", "fruitcounter") instance=ExtResource("1_i78rh")]
 position = Vector2(319, 183)
 healthbar = NodePath("../CanvasLayer/MarginContainer/VBoxContainer/Red")
 fruitcounter = NodePath("../CanvasLayer/MarginContainer/VBoxContainer/Label")
